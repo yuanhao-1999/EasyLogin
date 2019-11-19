@@ -42,3 +42,56 @@ allprojects {
 }
 ```
 
+
+
+How to use ? Just build an application in your project like: 
+
+
+
+```java
+/**
+ * @author fishinwater-1999
+ * @version 2019-11-19
+ */
+public class App extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        ARouter.init(this);
+    }
+}
+```
+
+
+
+
+
+Finally let's begin :
+
+```java
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ARouter.getInstance().build("/login/login")
+                .withLong("key1", 666L)
+                .withString("key3", "888")
+                .navigation();
+    }
+}
+```
+
+
+
+
+
+Yeah! We  jump to the new LoginActivity, without coding! 
+
+
+
+
+
+Thanks for you star.
